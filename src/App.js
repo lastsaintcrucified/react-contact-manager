@@ -15,11 +15,13 @@ function App() {
       <Router history={createBrowserHistory()}>
         <div className="App">
           <Header branding="Contact Manager" />
+          <Contacts />
           <div className="container">
             <Switch>
               <Route exact="true" path="/" component={Contacts} />
               <Route exact="true" path="/add" component={AddContacts} />
               <Route exact="true" path="/about" component={About} />
+              <Route component={NotFound} />
             </Switch>
           </div>
         </div>
