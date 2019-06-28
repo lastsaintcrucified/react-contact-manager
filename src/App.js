@@ -20,7 +20,6 @@ function App() {
               <Route exact="true" path="/" component={Contacts} />
               <Route exact="true" path="/add" component={AddContacts} />
               <Route exact="true" path="/about" component={About} />
-              <Route component={NotFound} />
             </Switch>
           </div>
         </div>
