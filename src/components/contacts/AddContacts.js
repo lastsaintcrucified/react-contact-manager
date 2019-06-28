@@ -47,6 +47,7 @@ class AddContacts extends Component {
       phone: "",
       errors: {}
     });
+    this.props.history.push("/");
   };
   onChangeValue = e => this.setState({ [e.target.name]: e.target.value });
   render() {

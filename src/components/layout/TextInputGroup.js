@@ -9,7 +9,8 @@ const TextInputGroup = ({
   value,
   type,
   onChange,
-  error
+  error,
+  onKeyPress
 }) => {
   return (
     <div className="form-group">
@@ -23,6 +24,7 @@ const TextInputGroup = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onKeyPress={onKeyPress}
       />
       {error ? <div className="invalid-feedback">{error}</div> : null}
     </div>
