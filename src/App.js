@@ -16,14 +16,11 @@ function App() {
         <div className="App">
           <Header branding="Contact Manager" />
           <div className="container">
-            <Contacts />
-          </div>
-          <div className="container">
             <Switch>
               <Route exact="true" path="/" component={Contacts} />
               <Route exact="true" path="/add" component={AddContacts} />
               <Route exact="true" path="/about" component={About} />
-              <Route path=" " component={NotFound} />
+              <Route component={NotFound} />
             </Switch>
           </div>
         </div>
