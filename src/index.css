@@ -27,3 +27,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.App {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

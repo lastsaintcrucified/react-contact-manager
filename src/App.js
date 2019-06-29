@@ -8,21 +8,49 @@ import Header from "./components/layout/Header";
 import AddContacts from "./components/contacts/AddContacts";
 import { Provider } from "./context";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 function App() {
   return (
     <Provider>
       <Router history={createBrowserHistory()}>
         <div className="App">
-          <Header branding="Contact Manager" />
-          <div className="container">
-            <Switch>
-              <Route exact={true} path="/" component={Contacts} />
-              <Route exact={true} path="/add" component={AddContacts} />
-              <Route exact={true} path="/about" component={About} />
-              <Route component={NotFound} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route
+              exact={true}
+              path="/"
+              render={() => (
+                <Header>
+                  <Contacts />
+                </Header>
+              )}
+            />
+            <Route
+              exact={true}
+              path="/add"
+              render={() => (
+                <Header>
+                  <AddContacts />
+                </Header>
+              )}
+            />
+            <Route
+              exact={true}
+              path="/about"
+              render={() => (
+                <Header>
+                  <About />
+                </Header>
+              )}
+            />
+            <Route
+              render={() => (
+                <Header>
+                  <NotFound />
+                </Header>
+              )}
+            />
+          </Switch>
         </div>
       </Router>
     </Provider>

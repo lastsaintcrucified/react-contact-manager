@@ -17,8 +17,6 @@ const reducer = (state, action) => {
         ...state,
         contacts: [action.payload, ...state.contacts]
       };
-    case "ERROR":
-      return alert("Need all the fields to be filled!");
     default:
       return state;
   }
