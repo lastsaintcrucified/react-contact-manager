@@ -6,6 +6,7 @@ import About from "./components/pages/About";
 import NotFound from "./components/pages/NotFound";
 import Header from "./components/layout/Header";
 import AddContacts from "./components/contacts/AddContacts";
+import EditContact from "./components/contacts/EditContact";
 import { Provider } from "./context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -13,7 +14,10 @@ import "./index.css";
 function App() {
   return (
     <Provider>
-      <Router history={createBrowserHistory()}>
+      <Router
+        history={createBrowserHistory()}
+        basename={process.env.PUBLIC_URL}
+      >
         <div className="App">
           <Switch>
             <Route
@@ -27,10 +31,19 @@ function App() {
             />
             <Route
               exact={true}
-              path="/add"
+              path="/contacts/add"
               render={() => (
                 <Header>
                   <AddContacts />
+                </Header>
+              )}
+            />
+            <Route
+              exact={true}
+              path="/contacts/edit/:id"
+              render={() => (
+                <Header>
+                  <EditContact />
                 </Header>
               )}
             />

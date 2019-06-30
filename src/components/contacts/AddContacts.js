@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import TextInputGroup from "../layout/TextInputGroup";
-import uuid from "uuid";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
 
 class AddContacts extends Component {
   state = {
@@ -14,7 +15,7 @@ class AddContacts extends Component {
   toggleInfo = () => {
     this.setState({ showInfo: !this.state.showInfo });
   };
-  onSubmit = (dispatch, e) => {
+  onSubmit = async (dispatch, e) => {
     e.preventDefault();
     const { name, email, phone, errors } = this.state;
     if (name === "") {
@@ -33,13 +34,16 @@ class AddContacts extends Component {
     }
 
     const newContact = {
-      id: uuid(),
       name,
       email,
       phone,
       errors
     };
-    dispatch({ type: "ADD_CONTACT", payload: newContact });
+    const res = await axios.post(
+      `https://jsonplaceholder.typicode.com/users`,
+      newContact
+    );
+    dispatch({ type: "ADD_CONTACT", payload: res.data });
     //clear state
     this.setState({
       name: "",
@@ -112,4 +116,4 @@ class AddContacts extends Component {
     );
   }
 }
-export default AddContacts;
+export default withRouter(AddContacts);
