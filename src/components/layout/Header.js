@@ -18,13 +18,13 @@ const Header = ({ children }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/add" className="nav-link">
+              <Link to="/contacts/add" className="nav-link">
                 <i className="fas fa-plus" />
                 Add
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/about" className="nav-link">
+              <Link to="/contacts/about" className="nav-link">
                 <i className="fas fa-question" />
                 About
               </Link>

@@ -46,7 +46,7 @@ function App() {
             />
             <Route
               exact={true}
-              path="/about"
+              path="/contacts/about"
               render={() => (
                 <Header>
                   <About />
