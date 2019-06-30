@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import Contacts from "./components/contacts/Contacts";
 import About from "./components/pages/About";
@@ -14,10 +14,7 @@ import "./index.css";
 function App() {
   return (
     <Provider>
-      <Router
-        history={createBrowserHistory()}
-        basename={process.env.PUBLIC_URL}
-      >
+      <Router history={createBrowserHistory()}>
         <div className="App">
           <Switch>
             <Route
